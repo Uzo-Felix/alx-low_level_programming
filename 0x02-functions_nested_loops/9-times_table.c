@@ -1,13 +1,33 @@
 #include "main.h"
 
+/**
+*times_table -> time table printing
+*/
+void times_table(void)
+{
+	int x, y, k;
 
-	/**
-	 * main - check the code
-	 *
-	 * Return: Always 0.
-	 */
-	int main(void)
+	for (x = 0; x < 10; x++)
 	{
-	    times_table();
-	    return (0);
+		for (y = 0; y < 10; y++)
+		{
+			k = x * y;
+			if (y == 0)
+				_putchar(k + '0');
+			if (y != 0 && k < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(k + '0');
+			} else if (k >= 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((k / 10) + '0');
+				_putchar((k % 10) + '0');
+			}
+		}
+		_putchar('\n');
 	}
+}
